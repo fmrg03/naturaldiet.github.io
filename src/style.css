@@ -1,0 +1,32 @@
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html , body {
+    height: 100vh;
+}
+
+header {
+    padding: 1vw;
+    background-color: midnightblue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>p{
+    font-size: 55px;
+}
+
+img{
+    width: 95px;
+}
+
+nav>a{
+    padding: 5px;
+    color: white;
+    font-size: 30px;
+}
