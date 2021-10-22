@@ -1,7 +1,7 @@
-import Header from "./components/Header";
+import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Container from 'react-bootstrap/Container'
-import ItemListContainer from "./components/ItemListContainer";
+import Container from "react-bootstrap/Container"
+import ItemListContainer from "./components/ItemListContainer"
 
 const App = () => {
     return (
@@ -11,6 +11,6 @@ const App = () => {
             <Footer/>
         </>
     )
-};
+}
 
-export default App;
+export default App
