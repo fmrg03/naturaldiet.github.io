@@ -45,6 +45,11 @@ nav>a{
 
 button{
     margin: 5px;
+    border-radius: 5px;
+}
+.botonAddCart{
+    display: block;
+    margin: 10px auto;
 }
 .stock{
     font-weight: bold;

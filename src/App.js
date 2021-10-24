@@ -8,7 +8,7 @@ const App = () => {
     return (
         <>
             <Header />
-            <ItemListContainer saludo="Hola, ¡Bienvenido!" stock={5} />
+            <ItemListContainer saludo="Hola, ¡Bienvenido!" stock={6} />
             <Footer />
         </>
     )
