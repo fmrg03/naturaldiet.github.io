@@ -33,7 +33,7 @@ const ItemCount = ({ stock, initial, callback }) => {
             <p><span className="stock">Cantidad: </span>{contador}</p>
             <button className="material-icons" onClick={restarContador}>remove</button>
             <button className="material-icons" onClick={sumarContador}>add</button>
-            <button className="material-icons botonAddCart" onClick={callback(contador)}>add_shopping_cart</button>
+            <button className="material-icons botonAddCart" onClick={() => callback(contador)}>add_shopping_cart</button>
             <p><span className="stock">Stock: </span>{stockfinal - initial}</p>
         </div>
     )
