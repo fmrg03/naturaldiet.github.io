@@ -2,9 +2,9 @@ import ItemCount from "./ItemCount"
 
 const ItemListContainer = ({ saludo, stock }) => {
 
-    const onAdd = () => {
+    const onAdd = (unidades) => {
         return (
-            console.log("Se agregó el producto al carrito")
+            console.log("Se agregó "+ unidades +" unidad/es del producto al carrito")
         )
     }
     return (
