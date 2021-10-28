@@ -1,16 +1,34 @@
-import ItemCount from "./ItemCount"
+import products from "../products.json"
+import ItemList from "./ItemList"
 
-const ItemListContainer = ({ saludo, stock }) => {
+const ItemListContainer = ({ saludo, stock, tituloProductos }) => {
 
-    const onAdd = (unidades) => {
+    const promesa = new Promise((respuesta, fallido) => {
+
+        setTimeout(() => {
+            respuesta(products)
+        }, 2000)
+    })
+
+    promesa.then((products) => { console.log(products) })
+
+    promesa.catch(() => { console.log("Promesa rechazada") })
+
+
+    const onAdd = (unidades, productoVenta) => {
         return (
-            console.log("Se agregó "+ unidades +" unidad/es del producto al carrito")
+            console.log("Se agregó " + unidades + " unidad/es del producto " + productoVenta + " al carrito")
         )
     }
+
     return (
         <div>
-            <p className="saludo">{saludo}</p>
-            <ItemCount stock={stock} initial={1} callback={onAdd} />
+            <h1 className="saludo">{saludo}</h1>
+            <p className="productosTitulo">{tituloProductos}</p>
+            <div className="flexProductos">
+                <ItemList productosx={products} initial={1} callback={onAdd}/>
+            </div>
+            {/*<ItemCount stock={stock} initial={1} callback={onAdd} />*/}
         </div>
     )
 }

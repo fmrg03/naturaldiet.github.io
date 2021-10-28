@@ -29,12 +29,12 @@ const ItemCount = ({ stock, initial, callback }) => {
 
     return (
         <div className="centrar">
-            <img src="/images/monitor.jpg" alt="Monitor" width="300x300" className="imagenMonitor" />
-            <p><span className="stock">Cantidad: </span>{contador}</p>
+            <img src="/images/maniSinSal.jpg" alt="ManíSinSal" width="300x300" className="cardImagen" />
+            <p><span className="boldFont">Cantidad: </span>{contador}</p>
             <button className="material-icons" onClick={restarContador}>remove</button>
             <button className="material-icons" onClick={sumarContador}>add</button>
             <button className="material-icons botonAddCart" onClick={() => callback(contador)}>add_shopping_cart</button>
-            <p><span className="stock">Stock: </span>{stockfinal - initial}</p>
+            <p><span className="boldFont">Stock: </span>{stockfinal - initial}</p>
         </div>
     )
 }
