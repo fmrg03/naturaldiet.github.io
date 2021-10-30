@@ -18,7 +18,7 @@ const ItemList = ({ productosx, initial, callback }) => {
     else {
         return (
             <>
-                {productos.map((e, i) => {
+                {productos.venta.map((e, i) => {
                     return (
                         <>
                             <Item id={e.id} nombre={e.nombre} precio={e.precio} imagen={e.imagen} stock={e.stock} descripcion={e.descripcion} initial={initial} callback={callback} />
