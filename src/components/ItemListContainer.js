@@ -1,32 +1,25 @@
-import products from "../products.json"
 import ItemList from "./ItemList"
+import { useState } from "react"
 
-const ItemListContainer = ({ saludo, stock, tituloProductos }) => {
+const ItemListContainer = ({ saludo, tituloProductos }) => {
 
-    const promesa = new Promise((respuesta, fallido) => {
+    const [datos, setDatos] = useState([])
 
-        setTimeout(() => {
-            respuesta(products)
-        }, 2000)
-    })
+    const getItem = async () => {
 
-    promesa.then((products) => { console.log(products) })
-
-    promesa.catch(() => { console.log("Promesa rechazada") })
-
-
-    const onAdd = (unidades, productoVenta) => {
-        return (
-            console.log("Se agregó " + unidades + " unidad/es del producto " + productoVenta + " al carrito")
-        )
+        const data = await fetch("http://localhost:3001/venta")
+        const datosAPI = await data.json()
+        setTimeout(() => { setDatos(datosAPI) }, 2000)
     }
+
+    getItem()
 
     return (
         <div>
             <h1 className="saludo">{saludo}</h1>
             <p className="productosTitulo">{tituloProductos}</p>
             <div className="flexProductos">
-                <ItemList productosx={products} initial={1} callback={onAdd}/>
+                <ItemList productos={datos} initial={1} />
             </div>
             {/*<ItemCount stock={stock} initial={1} callback={onAdd} />*/}
         </div>
