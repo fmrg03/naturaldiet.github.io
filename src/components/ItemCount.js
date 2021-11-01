@@ -1,9 +1,8 @@
 import { useState } from "react"
+import ModalCart from './ModalCart'
 
 
-const ItemCount = ({ stock, initial, callback }) => {
-
-
+const ItemCount = ({ stock, initial, productos }) => {
 
     const [contador, setContador] = useState(initial)
 
@@ -26,14 +25,14 @@ const ItemCount = ({ stock, initial, callback }) => {
         }
     }
 
-
     return (
         <div className="centrar">
-            <img src="/images/maniSinSal.jpg" alt="ManíSinSal" width="300x300" className="cardImagen" />
-            <p><span className="boldFont">Cantidad: </span>{contador}</p>
-            <button className="material-icons" onClick={restarContador}>remove</button>
-            <button className="material-icons" onClick={sumarContador}>add</button>
-            <button className="material-icons botonAddCart" onClick={() => callback(contador)}>add_shopping_cart</button>
+            <div className="divCantidad">
+                <button className="material-icons" onClick={restarContador}>remove</button>
+                <p className="cantidadProducto alignCenter"><span className="boldFont">Cantidad: </span>{contador}</p>
+                <button className="material-icons" onClick={sumarContador}>add</button>
+            </div>
+            <ModalCart nombre={productos.nombre} unidades={contador} imagen={productos.imagen} precio={productos.precio} />
             <p><span className="boldFont">Stock: </span>{stockfinal - initial}</p>
         </div>
     )

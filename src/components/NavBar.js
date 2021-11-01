@@ -4,11 +4,11 @@ const NavBar = () => {
     return (
         <>
             <nav>
-                <a href="#">Inicio</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Productos</a>
-                <a href="#">Promociones</a>
-                <a href="#">Contacto</a>
+                <a href="/home">Inicio</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/productos">Productos</a>
+                <a href="/promo">Promociones</a>
+                <a href="/contacto">Contacto</a>
             </nav>
             <CartWidget />
         </>
