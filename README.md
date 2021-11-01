@@ -17,7 +17,7 @@ You will also see any lint errors in the console.
 ### `npm run json`
 
 Runs the json-server.\
-Open [http://localhost:3001/venta](http://localhost:3000/venta) to view it in the browser.
+Open [http://localhost:3001/venta](http://localhost:3001/venta) to view it in the browser.
 
 This JSON File, contains the page's products database.\
 
