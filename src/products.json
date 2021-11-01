@@ -6,7 +6,7 @@
             "precio": "500.00",
             "stock": "8",
             "descripcion": "Maní repelado con Sal agregada, el precio es por 1 Kg",
-            "imagen": "/images/maniConSal.jpg"
+            "imagen": "/images/maniConSal.png"
         },
         {
             "id": "4051",
@@ -14,7 +14,7 @@
             "precio": "450.00",
             "stock": "11",
             "descripcion": "Maní repelado sin Sal agregada, el precio es por 1 Kg",
-            "imagen": "/images/maniSinSal.jpg"
+            "imagen": "/images/maniSinSal.png"
         },
         {
             "id": "4052",
@@ -22,7 +22,7 @@
             "precio": "650.00",
             "stock": "13",
             "descripcion": "Nueces Mariposa, el precio es por 1 Kg",
-            "imagen": "/images/nuez.jpg"
+            "imagen": "/images/nuez.png"
         },
         {
             "id": "4053",
@@ -30,7 +30,7 @@
             "precio": "700.00",
             "stock": "19",
             "descripcion": "Almendras enteras, el precio es por 1 Kg",
-            "imagen": "/images/almendras.jpg"
+            "imagen": "/images/almendras.png"
         },
         {
             "id": "4054",
@@ -38,7 +38,7 @@
             "precio": "1100.00",
             "stock": "14",
             "descripcion": "Pistachos tostados salados, el precio es por 1 Kg",
-            "imagen": "/images/pistachos.jpg"
+            "imagen": "/images/pistachos.png"
         },
         {
             "id": "4055",
@@ -46,7 +46,7 @@
             "precio": "900.00",
             "stock": "12",
             "descripcion": "Avellanas grandes, el precio es por 1 Kg",
-            "imagen": "/images/avellanas.jpg"
+            "imagen": "/images/avellanas.png"
         }
     ]
 }

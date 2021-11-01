@@ -33,19 +33,49 @@ nav>a{
     font-size: 20px;
     text-decoration: none;
 }
-.margin{
-    margin: 20px 0px;
-}
 
 .carrito{
     margin-right: 80px;
     font-size: 40px;
 }
 .centrar{
-    align-content: center;
     text-align: center;
+    align-items: center;
+}
+
+.contenedorCards{
+    width: auto;
+    margin: 20px 0px;
+}
+.contenedorItemD{
     border: 2px solid black;
-    width: 400px;
+    border-radius: 20px;
+    width: 80%;
+    align-self: center;
+}
+
+.alignCenter{
+    align-self: center;
+    align-items: center;
+}
+
+.divCantidad{
+    align-self: center;
+    align-content: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.borderBlack{
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.cantidadProducto{
+    display: inline-block;
+    margin: 0 5px;
+
 }
 
 .flexProductos{
@@ -62,18 +92,6 @@ nav>a{
     font-size: 30px;
     margin-top: 20px;
     font-weight: bold;
-}
-.acordion{
-    width: 280px;
-    margin: auto auto 15px auto;
-}
-.accordion-item{
-    border: 1px black solid;
-    width: auto;
-}
-.accordion-header{
-    margin: auto;
-    width: 250px;
 }
 .cargando{
     font-size: 40px;

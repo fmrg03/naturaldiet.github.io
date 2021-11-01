@@ -1,5 +1,5 @@
 import ItemList from "./ItemList"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const ItemListContainer = ({ saludo, tituloProductos }) => {
 
@@ -9,10 +9,12 @@ const ItemListContainer = ({ saludo, tituloProductos }) => {
 
         const data = await fetch("http://localhost:3001/venta")
         const datosAPI = await data.json()
-        setTimeout(() => { setDatos(datosAPI) }, 2000)
+
+        setDatos(datosAPI)
     }
 
-    getItem()
+    useEffect(() => { setTimeout(() => { getItem() }, 2000) }, [])
+
 
     return (
         <div>
