@@ -1,4 +1,4 @@
-import Header from "./components/Header"
+import Header from "./components/2"
 import Footer from "./components/Footer"
 import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
