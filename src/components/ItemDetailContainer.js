@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react"
 import ItemDetail from "./ItemDetail"
 import Spinner from "react-bootstrap/Spinner"
+import { useParams } from "react-router"
 
 const ItemDetailContainer = () => {
 
+    let { id } = useParams()
+
     const [datos, setDatos] = useState([])
+
+    let URL = "http://localhost:3001/venta/" + id
 
     const getItem = async () => {
 
-        const data = await fetch("http://localhost:3001/venta/4051")
+        const data = await fetch(URL)
         const datosAPI = await data.json()
         setDatos(datosAPI)
     }
 
-    useEffect(() => { setTimeout(() => { getItem() }, 2000) }, [])
+    useEffect(() => {
+        getItem()
+    }, [datos])
 
-    const onAdd = (unidades, productoVenta) => {
-        return (
-            console.log("Se agregó " + unidades + " unidad/es del producto " + productoVenta + " al carrito")
-        )
-    }
     if (datos.length === 0) {
         return (
             <>
@@ -31,7 +33,7 @@ const ItemDetailContainer = () => {
         return (
             <div>
                 <h1 className="productosTitulo">Detalles</h1>
-                <ItemDetail productos={datos} stock={datos.stock} initial={1} callback={onAdd} />
+                <ItemDetail productos={datos} stock={datos.stock} initial={1} />
             </div>
         )
     }

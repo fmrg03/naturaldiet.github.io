@@ -1,8 +1,12 @@
 import NavBar from "./NavBar"
+import { Link } from "react-router-dom"
+
 const Header = () => {
     return (
         <header>
-            <img className="logoHeader" src="/images/logoNatural.png" alt="Logo" />
+            <Link to="/">
+                <img className="logoHeader" src="/images/logoNatural.png" alt="Logo" />
+            </Link>
             <NavBar />
         </header>
     )
