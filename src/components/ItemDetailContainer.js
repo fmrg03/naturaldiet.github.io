@@ -12,7 +12,6 @@ const ItemDetailContainer = () => {
     let URL = "http://localhost:3001/venta/" + id
 
     const getItem = async () => {
-
         const data = await fetch(URL)
         const datosAPI = await data.json()
         setDatos(datosAPI)
@@ -20,7 +19,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         getItem()
-    }, [datos])
+    }, [id])
 
     if (datos.length === 0) {
         return (
@@ -33,7 +32,7 @@ const ItemDetailContainer = () => {
         return (
             <div>
                 <h1 className="productosTitulo">Detalles</h1>
-                <ItemDetail productos={datos} stock={datos.stock} initial={1} />
+                <ItemDetail id={datos.id} productos={datos} stock={datos.stock} initial={1} />
             </div>
         )
     }

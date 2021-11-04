@@ -9,7 +9,7 @@ const ItemDetail = ({ productos, initial, stock }) => {
         <Container fluid className="contenedorItemD centrar">
             <Row>
                 <Col xs={12} xxl={6}>
-                    <img key={productos.id} src={productos.imagen} alt={productos.nombre} width="400x300" className="cardImagen" />
+                    <img src={productos.imagen} alt={productos.nombre} width="400x300" className="cardImagen" />
                 </Col>
                 <Col xs={12} xxl={6} className="alignCenter">
                     <p className="nombreProducto">{productos.nombre}</p>

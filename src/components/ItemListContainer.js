@@ -33,24 +33,23 @@ const ItemListContainer = () => {
     const [datos, setDatos] = useState([])
 
     const getItem = async () => {
-
         const data = await fetch(URL)
         const datosAPI = await data.json()
-
         setDatos(datosAPI)
     }
+
     useEffect(() => {
         if (id) {
             getItem()
         }
-    }, [datos])
+    }, [id])
 
     return (
         <div>
             <h1 className="saludo">Hola, ¡Bienvenido!</h1>
             <p className="productosTitulo">{nombreCategoria}</p>
             <div className="flexProductos">
-                <ItemList productos={datos} initial={1} />
+                <ItemList key={id} productos={datos} initial={1} />
             </div>
         </div>
     )
