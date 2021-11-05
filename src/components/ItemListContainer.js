@@ -28,18 +28,16 @@ const ItemListContainer = () => {
         nombreCategoria = "Productos"
     }
 
-    const URL = "http://localhost:3001/venta" + id
-
     const [datos, setDatos] = useState([])
-
-    const getItem = async () => {
-        const data = await fetch(URL)
-        const datosAPI = await data.json()
-        setDatos(datosAPI)
-    }
 
     useEffect(() => {
         if (id) {
+            const URL = "http://localhost:3001/venta" + id
+            const getItem = async () => {
+                const data = await fetch(URL)
+                const datosAPI = await data.json()
+                setDatos(datosAPI)
+            }
             getItem()
         }
     }, [id])

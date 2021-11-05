@@ -9,15 +9,17 @@ const ItemDetailContainer = () => {
 
     const [datos, setDatos] = useState([])
 
-    let URL = "http://localhost:3001/venta/" + id
 
-    const getItem = async () => {
-        const data = await fetch(URL)
-        const datosAPI = await data.json()
-        setDatos(datosAPI)
-    }
+
+
 
     useEffect(() => {
+        let URL = "http://localhost:3001/venta/" + id
+        const getItem = async () => {
+            const data = await fetch(URL)
+            const datosAPI = await data.json()
+            setDatos(datosAPI)
+        }
         getItem()
     }, [id])
 
