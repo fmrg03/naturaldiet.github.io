@@ -73,6 +73,8 @@ ul{
 .carrito{
     margin-right: 80px;
     font-size: 40px;
+    text-decoration: none;
+    color: black;
 }
 .centrar{
     text-align: center;
@@ -102,7 +104,6 @@ ul{
     text-align: center;
     justify-content: center;
 }
-
 .borderBlack{
     border: 2px solid black;
     border-radius: 20px;
@@ -111,9 +112,7 @@ ul{
 .cantidadProducto{
     display: inline-block;
     margin: 0 5px;
-
 }
-
 .flexProductos{
     display: flex;
     justify-content: space-around;
@@ -125,7 +124,7 @@ ul{
     text-align: center;
 }
 .nombreProducto{
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 20px;
     font-weight: bold;
 }
@@ -143,6 +142,24 @@ button{
 .botonAddCart{
     display: block;
     margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin-right: 8px;
+    font-weight: bold;
+}
+.irAlCarrito a{
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+}
+.irAlCarrito{
+    margin-bottom: 20px;
 }
 .boldFont{
     font-weight: bold;

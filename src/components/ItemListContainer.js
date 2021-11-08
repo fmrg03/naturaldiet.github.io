@@ -1,6 +1,7 @@
 import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { Container, Row, Col } from "react-bootstrap"
 
 const ItemListContainer = () => {
 
@@ -43,13 +44,21 @@ const ItemListContainer = () => {
     }, [id])
 
     return (
-        <div>
-            <h1 className="saludo">Hola, ¡Bienvenido!</h1>
-            <p className="productosTitulo">{nombreCategoria}</p>
-            <div className="flexProductos">
-                <ItemList key={id} productos={datos} initial={1} />
-            </div>
-        </div>
+        <Container fluid>
+            <Row>
+                <Col>
+                    <h1 className="saludo">Hola, ¡Bienvenido!</h1>
+                    <p className="productosTitulo">{nombreCategoria}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12} xxl={12}>
+                    <div className="flexProductos">
+                        <ItemList productos={datos} initial={1} />
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

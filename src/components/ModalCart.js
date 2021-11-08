@@ -1,7 +1,7 @@
 import Modal from 'react-bootstrap/Modal'
 import { useState } from 'react'
 
-const ModalCart = ({ nombre, unidades, imagen, precio }) => {
+const ModalCart = ({ nombre, unidades, imagen, precio, add }) => {
 
     const [show, setShow] = useState(false)
 
@@ -9,13 +9,14 @@ const ModalCart = ({ nombre, unidades, imagen, precio }) => {
     const handleShow = () => {
         setShow(true)
         setTimeout(() => setShow(false), 2500)
+        add()
     }
 
 
     return (
         <>
             <button className="material-icons botonAddCart" variant="primary" onClick={handleShow}>
-                add_shopping_cart
+                <span className="a">Agregar al Carrito </span> add_shopping_cart
             </button>
 
             <Modal show={show} onHide={handleClose}>

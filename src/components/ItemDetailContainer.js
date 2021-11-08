@@ -2,16 +2,13 @@ import { useState, useEffect } from "react"
 import ItemDetail from "./ItemDetail"
 import Spinner from "react-bootstrap/Spinner"
 import { useParams } from "react-router"
+import { Container, Row, Col } from "react-bootstrap"
 
 const ItemDetailContainer = () => {
 
     let { id } = useParams()
 
     const [datos, setDatos] = useState([])
-
-
-
-
 
     useEffect(() => {
         let URL = "http://localhost:3001/venta/" + id
@@ -32,10 +29,18 @@ const ItemDetailContainer = () => {
         )
     } else {
         return (
-            <div>
-                <h1 className="productosTitulo">Detalles</h1>
-                <ItemDetail id={datos.id} productos={datos} stock={datos.stock} initial={1} />
-            </div>
+            <Container fluid>
+                <Row>
+                    <Col>
+                        <h1 className="productosTitulo">Detalles</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <ItemDetail id={datos.id} producto={datos} initial={1} />
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }
