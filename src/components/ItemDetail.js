@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Container, Row, Col } from "react-bootstrap"
 import Image from 'react-bootstrap/Image'
 import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom"
+import { context } from '../context/CartContext'
 
 
 const ItemDetail = ({ producto, initial }) => {
 
     const [stockfinal, setStockfinal] = useState(producto.stock - initial)
 
+    const { addToCart } = useContext(context)
+
     const onAdd = (cantidad) => {
-        console.log("se agrego: ", cantidad)
+        console.log("se agrego: ", producto, cantidad)
+        addToCart(producto, cantidad)
     }
+
     const sumarRestar = (stock) => {
         setStockfinal(stock)
         console.log("stock final: ", stock)

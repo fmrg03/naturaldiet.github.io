@@ -1,6 +1,6 @@
 import { useState } from "react"
 import ModalCart from './ModalCart'
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row } from "react-bootstrap"
 
 const ItemCount = ({ initial, producto, onAdd, sumarRestar }) => {
 
