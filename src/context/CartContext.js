@@ -4,7 +4,7 @@ export const context = createContext()
 
 const { Provider } = context
 
-const CartContext = ({ children }) => {
+const CustomProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
 
@@ -57,4 +57,4 @@ const CartContext = ({ children }) => {
 }
 
 
-export default CartContext
+export default CustomProvider
