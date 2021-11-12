@@ -5,7 +5,6 @@ import { context } from "../context/CartContext"
 const CartWidget = () => {
 
     const { cart } = useContext(context)
-    console.log("esto es resultadoo", cart)
 
     return (
         <Link to="/cart">

@@ -8,13 +8,45 @@ const CartContext = ({ children }) => {
 
     const [cart, setCart] = useState([])
 
-    const addToCart = (product, cantidad) => {
-        console.log("soy el contexto", product, cantidad)
+    const addItem = (cantidad, producto) => {
+        if (isInCart(producto) === true) {
+            const arrayCart = [...cart]
+            let inidice = arrayCart.findIndex(item => item.producto.id === producto.id)
+            arrayCart[inidice].cantidad += cantidad
+            setCart(arrayCart)
+            console.log("arrayCart", arrayCart)
+        } else {
+            const arrayCart = [...cart, { cantidad, producto }]
+            setCart(arrayCart)
+            console.log("arrayCart", arrayCart)
+        }
+    }
+
+    const isInCart = (productoIngresado) => {
+        if (cart.find(item => item.producto.id === productoIngresado.id)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    const removeItem = (producto) => {
+        let arrayCart = [...cart]
+        arrayCart = arrayCart.filter(item => item.producto.id !== producto.id)
+        setCart(arrayCart)
+        console.log("se removió el producto", producto)
+        console.log("arrayCart", arrayCart)
+    }
+
+    const clearCart = () => {
+        setCart([])
     }
 
     const valoresContext = {
         cart: cart,
-        addToCart: addToCart
+        addItem: addItem,
+        removeItem: removeItem,
+        clearCart: clearCart
     }
 
     return (

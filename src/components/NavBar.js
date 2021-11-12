@@ -2,7 +2,6 @@ import CartWidget from "./CartWidget"
 import { NavLink } from "react-router-dom"
 
 const NavBar = () => {
-    console.log("GIAKDSASDA")
     return (
         <>
             <nav>

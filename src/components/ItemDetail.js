@@ -10,16 +10,15 @@ const ItemDetail = ({ producto, initial }) => {
 
     const [stockfinal, setStockfinal] = useState(producto.stock - initial)
 
-    const { addToCart } = useContext(context)
+    const { addItem } = useContext(context)
+    const { removeItem } = useContext(context)
 
     const onAdd = (cantidad) => {
-        console.log("se agrego: ", producto, cantidad)
-        addToCart(producto, cantidad)
+        addItem(cantidad, producto)
     }
 
     const sumarRestar = (stock) => {
         setStockfinal(stock)
-        console.log("stock final: ", stock)
     }
 
     return (
@@ -37,6 +36,7 @@ const ItemDetail = ({ producto, initial }) => {
                     <p><span className="boldFont">Precio: </span>${producto.precio}</p>
                     <ItemCount initial={initial} producto={producto} onAdd={onAdd} sumarRestar={sumarRestar} />
                     <p><span className="boldFont">Stock: </span>{stockfinal}</p>
+                    <button className="irAlCarrito" onClick={() => removeItem(producto)}>Borrar del Carrito</button>
                     <button className="irAlCarrito"><Link to="/cart">Ir al Carrito</Link></button>
                     <div>
                         <h4 className="boldFont">Detalles del Producto</h4>
