@@ -1,19 +1,55 @@
 import { useContext } from "react"
 import { context } from "../context/CartContext"
+import { Container, Row, Col } from "react-bootstrap"
+import Image from 'react-bootstrap/Image'
 
 const Cart = () => {
 
-    const { cart, addItem, removeItem, clearCart } = useContext(context)
-    console.log(cart)
-    console.log(addItem)
-    console.log(removeItem())
-    console.log(clearCart)
+    const { cart, removeItem, clearCart } = useContext(context)
 
-    return (
-        <div>
-            
-        </div>
-    )
+    let totalAPagar = 0
+    cart.forEach(element => {
+        totalAPagar += element.cantidad * element.producto.precio
+    })
+
+    if (cart.length === 0) {
+        return (
+            <Container fluid id="carritoVacio">
+                <Row>
+                    <Col>
+                        <h1 className="centrar tituloCarritoVacio">El Carrito se encuentra Vacío</h1>
+                    </Col>
+                </Row>
+            </Container>
+        )
+    } else {
+        return (
+            <Container fluid id="layoutCarrito">
+                <p className="tituloCarrito centrar">Carrito</p>
+                {cart.map(item => (
+                    <Row className="item">
+                        <Col className="centrar">
+                            <h1>{item.producto.nombre}</h1>
+                            <Image src={item.producto.imagen} className="imagenCarrito" alt="item.producto.nombre" />
+                        </Col>
+                        <Col className="totalProducto centrar">
+                            <h4><span className="boldFont">Total:</span> ${item.producto.precio * item.cantidad}</h4>
+                            <h4>Cantidad: {item.cantidad}</h4>
+                            <button className="buttonCarrito" onClick={() => removeItem(item.producto)}>Eliminar</button>
+                        </Col>
+                    </Row>
+                ))}
+                <Row className="divTotalFinal">
+                    <Col className="centrar totalProducto">
+                        <button className="buttonVaciarCarrito" onClick={() => clearCart()}>Vaciar Carrito</button>
+                    </Col>
+                    <Col className="derecha">
+                        <p className="TotalFinal">Total a Pagar: <span className="boldFont">${totalAPagar}</span></p>
+                    </Col>
+                </Row>
+            </Container>
+        )
+    }
 }
 
 export default Cart

@@ -11,7 +11,6 @@ const ItemDetail = ({ producto, initial }) => {
     const [stockfinal, setStockfinal] = useState(producto.stock - initial)
 
     const { addItem } = useContext(context)
-    const { removeItem } = useContext(context)
 
     const onAdd = (cantidad) => {
         addItem(cantidad, producto)
@@ -36,8 +35,7 @@ const ItemDetail = ({ producto, initial }) => {
                     <p><span className="boldFont">Precio: </span>${producto.precio}</p>
                     <ItemCount initial={initial} producto={producto} onAdd={onAdd} sumarRestar={sumarRestar} />
                     <p><span className="boldFont">Stock: </span>{stockfinal}</p>
-                    <button className="irAlCarrito" onClick={() => removeItem(producto)}>Borrar del Carrito</button>
-                    <button className="irAlCarrito"><Link to="/cart">Ir al Carrito</Link></button>
+                    <button className="buttonCarrito"><Link to="/cart">Ir al Carrito</Link></button>
                     <div>
                         <h4 className="boldFont">Detalles del Producto</h4>
                         {producto.descripcion}
