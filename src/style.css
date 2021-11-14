@@ -107,6 +107,7 @@ ul{
 .alignCenter{
     align-self: center;
     align-items: center;
+    text-align: center;
 }
 
 .divCantidad{
@@ -117,7 +118,7 @@ ul{
     justify-content: center;
 }
 .borderBlack{
-    border: 2px solid black;
+    border: 1px solid gray;
     border-radius: 20px;
 }
 
@@ -238,10 +239,6 @@ footer{
     padding: 30px 0;
     box-shadow: 0px 0px 5px 1px black;
 }
-footer p{
-    font-weight: bold;
-    font-size: 18px;
-}
 footer nav {
     display: flex;
     flex-direction: column;
@@ -273,6 +270,43 @@ footer .carrito{
 footer .divCarrito p{
     display: none;
 }
+.titulosFooter{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contactoTitulo{
+    margin-bottom: 0px;
+}
+footer .flexFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+.mapaSitio{
+    width: 30%!important;
+}
+.colContacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80%;
+}
+.colContacto a{
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+}
+.logoFooter{
+    width: 150px;
+    margin: auto;
+}
+.espacioFilas{
+    margin-top: 30px;
+}
 .saludo{
     text-align: center;
     margin: 30px 0;
@@ -283,7 +317,6 @@ footer .divCarrito p{
     font-weight: bold;
     font-size: 45px;
 }
-
 .cardImagen{
     display: block;
     margin: auto;

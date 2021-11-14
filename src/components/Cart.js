@@ -1,11 +1,18 @@
 import { useContext } from "react"
 import { context } from "../context/CartContext"
 import { Container, Row, Col } from "react-bootstrap"
+import { useHistory } from "react-router-dom"
 import Image from 'react-bootstrap/Image'
 
 const Cart = () => {
 
     const { cart, removeItem, clearCart } = useContext(context)
+
+    const { push } = useHistory()
+
+    const redireccionar = () => {
+        push("/productos")
+    }
 
     let totalAPagar = 0
     cart.forEach(element => {
@@ -16,8 +23,10 @@ const Cart = () => {
         return (
             <Container fluid id="carritoVacio">
                 <Row>
-                    <Col>
-                        <h1 className="centrar tituloCarritoVacio">El Carrito se encuentra Vacío</h1>
+                    <Col className="alignCenter">
+                        <h1 className="tituloCarritoVacio">Tu Carrito se encuentra Vacío</h1>
+                        <h4 className="tituloCarritoVacio">Presiona el botón para ver los productos</h4>
+                        <button className="buttonCarrito boldFont" onClick={redireccionar}>Productos</button>
                     </Col>
                 </Row>
             </Container>

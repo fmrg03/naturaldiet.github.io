@@ -2,18 +2,25 @@ import { useState, useContext } from 'react'
 import { Container, Row, Col } from "react-bootstrap"
 import Image from 'react-bootstrap/Image'
 import ItemCount from "./ItemCount"
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { context } from '../context/CartContext'
 
 
 const ItemDetail = ({ producto, initial }) => {
 
     const [stockfinal, setStockfinal] = useState(producto.stock - initial)
+    const [mostrar, setMostrar] = useState(false)
+
+    const { push } = useHistory()
+    const redireccionar = () => {
+        push("/cart")
+    }
 
     const { addItem } = useContext(context)
 
     const onAdd = (cantidad) => {
         addItem(cantidad, producto)
+        setMostrar(!mostrar)
     }
 
     const sumarRestar = (stock) => {
@@ -35,7 +42,7 @@ const ItemDetail = ({ producto, initial }) => {
                     <p><span className="boldFont">Precio: </span>${producto.precio}</p>
                     <ItemCount initial={initial} producto={producto} onAdd={onAdd} sumarRestar={sumarRestar} />
                     <p><span className="boldFont">Stock: </span>{stockfinal}</p>
-                    <button className="buttonCarrito"><Link to="/cart">Ir al Carrito</Link></button>
+                    {mostrar && <button className="buttonCarrito" onClick={redireccionar}>Finalizar Compra</button>}
                     <div>
                         <h4 className="boldFont">Detalles del Producto</h4>
                         {producto.descripcion}

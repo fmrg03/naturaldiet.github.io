@@ -6,18 +6,19 @@ const CartWidget = () => {
 
     const { cart } = useContext(context)
 
-    let total = 0
+    let total = null
+
     cart.forEach(element => {
         total += element.cantidad
     })
+
 
     return (
         <div className="divCarrito">
             <Link to="/cart" className="linkCarrito">
                 <span className="material-icons carrito">shopping_cart</span>
-                <p>{total}</p>
+                {total != null && <p>{total}</p>}
             </Link>
-
         </div>
     )
 }
