@@ -2,9 +2,10 @@ import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Container, Row, Col } from "react-bootstrap"
+import { db } from "../firebase/firebase"
 
 const ItemListContainer = () => {
-
+    
     let nombreCategoria = null
     let { id } = useParams()
 
@@ -20,27 +21,29 @@ const ItemListContainer = () => {
                 nombreCategoria = "Legumbres"
                 break
             default:
+                nombreCategoria = "Productos"
                 break
         }
-        id = "/?q=" + id
-
-    } else {
-        id = "/"
-        nombreCategoria = "Productos"
     }
 
     const [datos, setDatos] = useState([])
 
     useEffect(() => {
+        let query = db.collection("productos")
         if (id) {
-            const URL = "http://localhost:3001/venta" + id
-            const getItem = async () => {
-                const data = await fetch(URL)
-                const datosAPI = await data.json()
-                setDatos(datosAPI)
-            }
-            getItem()
+            query = query.where("categoria", "==", id)
         }
+        const promesa = query.get()
+        promesa
+            .then((productos) => {
+                const datos = productos.docs.map(doc =>
+                    ({ ...doc.data(), id: doc.id }))
+                setDatos(datos)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+
     }, [id])
 
     return (

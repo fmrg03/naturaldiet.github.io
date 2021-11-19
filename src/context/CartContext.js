@@ -11,14 +11,12 @@ const CustomProvider = ({ children }) => {
     const addItem = (cantidad, producto) => {
         if (isInCart(producto) === true) {
             const arrayCart = [...cart]
-            let inidice = arrayCart.findIndex(item => item.producto.id === producto.id)
-            arrayCart[inidice].cantidad += cantidad
+            let indice = arrayCart.findIndex(item => item.producto.id === producto.id)
+            arrayCart[indice].cantidad += cantidad
             setCart(arrayCart)
-            console.log("arrayCart", arrayCart)
         } else {
             const arrayCart = [...cart, { cantidad, producto }]
             setCart(arrayCart)
-            console.log("arrayCart", arrayCart)
         }
     }
 
@@ -34,8 +32,6 @@ const CustomProvider = ({ children }) => {
         let arrayCart = [...cart]
         arrayCart = arrayCart.filter(item => item.producto.id !== producto.id)
         setCart(arrayCart)
-        console.log("se removió el producto", producto)
-        console.log("arrayCart", arrayCart)
     }
 
     const clearCart = () => {

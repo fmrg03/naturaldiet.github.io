@@ -3,6 +3,7 @@ import ItemDetail from "./ItemDetail"
 import Spinner from "react-bootstrap/Spinner"
 import { useParams } from "react-router"
 import { Container, Row, Col } from "react-bootstrap"
+import { db } from "../firebase/firebase"
 
 const ItemDetailContainer = () => {
 
@@ -11,13 +12,16 @@ const ItemDetailContainer = () => {
     const [datos, setDatos] = useState([])
 
     useEffect(() => {
-        let URL = "http://localhost:3001/venta/" + id
-        const getItem = async () => {
-            const data = await fetch(URL)
-            const datosAPI = await data.json()
-            setDatos(datosAPI)
-        }
-        getItem()
+        const promesa = db.collection("productos").doc(id).get()
+
+        promesa
+            .then((productos) => {
+                const datos = productos.data()
+                setDatos({ ...datos, id: productos.id })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }, [id])
 
     if (datos.length === 0) {

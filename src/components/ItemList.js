@@ -9,10 +9,10 @@ const ItemList = ({ productos }) => {
     else {
         return (
             <>
-                {productos.map((e) => {
+                {productos.map(producto => {
                     return (
                         <>
-                            <Item key={e.id} id={e.id} nombre={e.nombre} precio={e.precio} imagen={e.imagen} />
+                            <Item key={producto.id} producto={producto} />
                         </>
                     )
                 })}
