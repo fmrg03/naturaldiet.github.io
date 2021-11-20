@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
+import Contact from "./components/Contact"
 import Cart from "./components/Cart"
 import { BrowserRouter, Route } from "react-router-dom"
 import CustomProvider from "./context/CartContext"
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path="/productos" component={ItemListContainer} />
                 <Route path="/item/:id" component={ItemDetailContainer} />
                 <Route path="/cart" component={Cart} />
+                <Route path="/contacto" component={Contact} />
                 <Footer />
             </CustomProvider>
         </BrowserRouter>

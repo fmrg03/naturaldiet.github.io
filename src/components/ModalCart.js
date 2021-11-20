@@ -22,7 +22,7 @@ const ModalCart = ({ nombre, unidades, imagen, precio, add }) => {
     return (
         <>
             <button className="material-icons botonAddCart" variant="primary" onClick={handleShow}>
-                <span className="a">Agregar al Carrito </span> add_shopping_cart
+                <span className="agregarAlCarrito">Agregar al Carrito </span> add_shopping_cart
             </button>
 
             <Modal show={show} onHide={handleClose}>

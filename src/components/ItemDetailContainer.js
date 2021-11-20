@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import ItemDetail from "./ItemDetail"
+import BannerServices from "./BannerServices"
 import Spinner from "react-bootstrap/Spinner"
 import { useParams } from "react-router"
 import { Container, Row, Col } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import { db } from "../firebase/firebase"
 
 const ItemDetailContainer = () => {
@@ -23,7 +25,21 @@ const ItemDetailContainer = () => {
                 console.log(error)
             })
     }, [id])
-
+    const ruta = "/categoria/" + datos.categoria
+    let nombreCategoria = "Productos"
+    switch (datos.categoria) {
+        case "frutosSecos":
+            nombreCategoria = "Frutos Secos"
+            break
+        case "cereales":
+            nombreCategoria = "Cereales"
+            break
+        case "legumbres":
+            nombreCategoria = "Legumbres"
+            break
+        default:
+            break
+    }
     if (datos.length === 0) {
         return (
             <>
@@ -34,9 +50,17 @@ const ItemDetailContainer = () => {
     } else {
         return (
             <Container fluid>
-                <Row>
-                    <Col>
-                        <h1 className="productosTitulo">Detalles</h1>
+                <Row className="indice">
+                    <Col xxl={5} className="indice">
+                        <ul>
+                            <li><Link to="/">Inicio</Link></li>
+                            <li>/</li>
+                            <li><Link to="/productos">Productos</Link></li>
+                            <li>/</li>
+                            <li><Link to={ruta}>{nombreCategoria}</Link></li>
+                            <li>/</li>
+                            <li><span>{datos.nombre}</span></li>
+                        </ul>
                     </Col>
                 </Row>
                 <Row>
@@ -44,7 +68,10 @@ const ItemDetailContainer = () => {
                         <ItemDetail id={datos.id} producto={datos} initial={1} />
                     </Col>
                 </Row>
-            </Container>
+                <Row className="filaBanner">
+                    <BannerServices />
+                </Row>
+            </Container >
         )
     }
 }

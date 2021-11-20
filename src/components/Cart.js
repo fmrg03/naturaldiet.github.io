@@ -39,7 +39,7 @@ const Cart = () => {
                     <Row className="item">
                         <Col className="centrar">
                             <h1>{item.producto.nombre}</h1>
-                            <Image src={item.producto.imagen} className="imagenCarrito" alt="item.producto.nombre" />
+                            <Image src={item.producto.imagen} className="imagenCarrito" alt={item.producto.nombre} />
                         </Col>
                         <Col className="totalProducto centrar">
                             <h4><span className="boldFont">Total:</span> ${item.producto.precio * item.cantidad}</h4>
@@ -54,6 +54,11 @@ const Cart = () => {
                     </Col>
                     <Col className="derecha">
                         <p className="TotalFinal">Total a Pagar: <span className="boldFont">${totalAPagar}</span></p>
+                    </Col>
+                </Row>
+                <Row className="rowButtonFinalizar">
+                    <Col xxl={4}>
+                        <button className="buttonVaciarCarrito">Finalizar Compra</button>
                     </Col>
                 </Row>
             </Container>

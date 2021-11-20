@@ -1,12 +1,13 @@
 import ItemList from "./ItemList"
+import BannerServices from "./BannerServices"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Container, Row, Col } from "react-bootstrap"
 import { db } from "../firebase/firebase"
 
 const ItemListContainer = () => {
-    
-    let nombreCategoria = null
+
+    let nombreCategoria = "Productos"
     let { id } = useParams()
 
     if (id !== undefined) {
@@ -21,7 +22,6 @@ const ItemListContainer = () => {
                 nombreCategoria = "Legumbres"
                 break
             default:
-                nombreCategoria = "Productos"
                 break
         }
     }
@@ -48,11 +48,9 @@ const ItemListContainer = () => {
 
     return (
         <Container fluid>
-            <Row>
-                <Col>
-                    <h1 className="saludo">Hola, ¡Bienvenido!</h1>
-                    <p className="productosTitulo">{nombreCategoria}</p>
-                </Col>
+            <Row className="filaBanner">
+                <h1 className="productosTitulo">{nombreCategoria}</h1>
+                <BannerServices />
             </Row>
             <Row>
                 <Col xs={12} xxl={12}>

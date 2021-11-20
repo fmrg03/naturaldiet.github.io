@@ -16,16 +16,16 @@ const Footer = () => {
                         <p className="titulosFooter contactoTitulo">Contacto</p>
                         <Container fluid className="colContacto">
                             <div>
-                                <img src="./images/phonew.png" width="30" height="30"
+                                <img src="./images/phone.png" width="30" height="30"
                                     alt="phoneIcon" />
                                 <a href="https://wa.link/qs4mej" target="_blank" rel="noreferrer"> +54 9 11 2386 5247 </a>
                             </div>
                             <div>
-                                <img src="./images/mailw.png" width="30" height="30" alt="emailIcon" />
+                                <img src="./images/email.png" width="30" height="30" alt="emailIcon" />
                                 <a href="mailto:naturaldiet@gmail.com">naturaldiet@gmail.com</a>
                             </div>
                             <div>
-                                <img src="./images/pinw.png" width="30x30" alt="locationIcon" />
+                                <img src="./images/pin.png" width="30x30" alt="locationIcon" />
                                 <a href="https://www.google.com/maps/place/San+Isidro,+Provincia+de+Buenos+Aires/@-34.4720519,-58.5636093,13z/data=!3m1!4b1!4m5!3m4!1s0x95bcb03cd891437f:0xab3b49e671350275!8m2!3d-34.470829!4d-58.5286102"
                                     target="_blank" rel="noreferrer"> San
                                     Isidro, Buenos
@@ -41,6 +41,7 @@ const Footer = () => {
                                 <img src="./images/visa.png" width="60x60" alt="visa" />
                                 <img src="./images//mastercard.png" width="60x60" alt="mastercard" />
                                 <img src="./images/mercadopago.png" width="100x100" alt="mercadopago" />
+                                <img src="./images/dinero.png" alt="efectivo" />
                             </div>
                         </Row>
                         <Row className="espacioFilas">

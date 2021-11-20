@@ -10,7 +10,7 @@ html , body {
 
 header {
     padding: 1vw;
-    background-color: rgba(128, 128, 128, 0.616);
+    background-color: rgba(39, 174, 96, 0.1);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@ nav>ul{
 }
 nav li a{
     padding: 25px;
-    color: white;
+    color: black;
     font-size: 20px;
     text-decoration: none;
     display: block;
@@ -92,7 +92,57 @@ ul{
     align-items: center;
     justify-content: center;
 }
-
+.indice{
+    justify-content: right;
+    margin-right: 30px;
+}
+.indice li{
+    float:left;
+    padding-left: 15px;
+}
+.indice li span{
+    color: gray;
+}
+.indice li a{
+    text-decoration: none;
+    color: black;
+}
+.indice li a:hover{
+    text-decoration: none;
+    color: blue;
+}
+.filaBanner{
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(39, 174, 96, 0.4);
+    border-radius: 30px;
+}
+.filaBanner h1{
+    border-bottom: 1px solid black;
+    width: 95%;
+    margin: 20px auto;
+    padding-bottom: 10px;
+}
+.colBanner{
+    margin: 10px 10px;
+    padding: 0px 20px;
+}
+.tituloBanner{
+    display: inline-block;
+    font-size: 20px;
+    margin: 0px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+.colBanner img{
+    margin: 10px;
+}
+.borderCol{
+    border-left: 1px solid black;
+}
+.borderCol2{
+    border-right: 1px solid black;
+}
 .contenedorCards{
     width: auto;
     margin: 20px 0px;
@@ -160,7 +210,7 @@ button{
     justify-content: space-between;
     padding: 5px;
 }
-.a{
+.agregarAlCarrito{
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     margin-right: 8px;
@@ -197,6 +247,10 @@ button{
     box-shadow: 10px black;
     padding: 20px 70px 70px;
     box-shadow: 0px 0px 5px 1px black;
+    border-radius: 30px;
+}
+#layoutCarrito .botonAddCart{
+    display: none;
 }
 #carritoVacio{
     width: 80%;
@@ -204,6 +258,7 @@ button{
     box-shadow: 10px black;
     padding: 20px;
     box-shadow: 0px 0px 5px 1px black;
+    border-radius: 30px;
 }
 .totalProducto{
     margin: auto;
@@ -228,9 +283,14 @@ button{
 .boldFont{
     font-weight: bold;
 }
-
+.rowButtonFinalizar{
+    justify-content: right;
+}
+.rowButtonFinalizar button{
+    font-weight: bold;
+}
 footer{
-    background-color: gray;
+    background-color: rgba(39, 174, 96, 0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -297,7 +357,7 @@ footer .flexFooter {
 }
 .colContacto a{
     text-decoration: none;
-    color: white;
+    color: black;
     margin-left: 15px;
 }
 .logoFooter{
@@ -320,4 +380,28 @@ footer .flexFooter {
 .cardImagen{
     display: block;
     margin: auto;
+}
+#containerContacto{
+    border-radius: 30px;
+    border: 2px solid lightgray;
+    padding: 30px;
+    margin: auto;
+}
+#fs-frm-inputs{
+    display:flex;
+    flex-direction: column;
+}#containerContacto label{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+#containerContacto input{
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+#containerContacto textarea{
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
 }
