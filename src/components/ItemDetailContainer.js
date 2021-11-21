@@ -25,6 +25,7 @@ const ItemDetailContainer = () => {
                 console.log(error)
             })
     }, [id])
+
     const ruta = "/categoria/" + datos.categoria
     let nombreCategoria = "Productos"
     switch (datos.categoria) {
@@ -40,6 +41,7 @@ const ItemDetailContainer = () => {
         default:
             break
     }
+    
     if (datos.length === 0) {
         return (
             <>

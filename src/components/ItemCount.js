@@ -32,7 +32,6 @@ const ItemCount = ({ initial, producto, onAdd, sumarRestar }) => {
         onAdd(contador)
     }
 
-
     return (
         <Container fluid className="centrar">
             <Row>

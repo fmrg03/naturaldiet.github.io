@@ -18,13 +18,11 @@ const ModalCart = ({ nombre, unidades, imagen, precio, add }) => {
         add()
     }
 
-
     return (
         <>
             <button className="material-icons botonAddCart" variant="primary" onClick={handleShow}>
                 <span className="agregarAlCarrito">Agregar al Carrito </span> add_shopping_cart
             </button>
-
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Producto Agregado al Carrito</Modal.Title>

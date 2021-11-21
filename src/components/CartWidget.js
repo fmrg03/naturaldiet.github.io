@@ -12,7 +12,6 @@ const CartWidget = () => {
         total += element.cantidad
     })
 
-
     return (
         <div className="divCarrito">
             <Link to="/cart" className="linkCarrito">
