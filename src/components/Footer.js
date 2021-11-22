@@ -18,7 +18,7 @@ const Footer = () => {
                             <div>
                                 <img src="./images/phone.png" width="30" height="30"
                                     alt="phoneIcon" />
-                                <a href="https://wa.link/qs4mej" target="_blank" rel="noreferrer"> +54 9 11 2386 5247 </a>
+                                <a href="wa.link/n91isy" target="_blank" rel="noreferrer"> +54 9 11 2386 5247 </a>
                             </div>
                             <div>
                                 <img src="./images/email.png" width="30" height="30" alt="emailIcon" />
