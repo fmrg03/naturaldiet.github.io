@@ -6,6 +6,8 @@ import Contact from "./components/Contact"
 import Cart from "./components/Cart"
 import { BrowserRouter, Route } from "react-router-dom"
 import CustomProvider from "./context/CartContext"
+import Form from "./components/Form"
+import SummaryOrder from "./components/SummaryOrder"
 
 const App = () => {
     return (
@@ -17,6 +19,8 @@ const App = () => {
                 <Route path="/productos" component={ItemListContainer} />
                 <Route path="/item/:id" component={ItemDetailContainer} />
                 <Route path="/cart" component={Cart} />
+                <Route path="/checkout" component={Form} />
+                <Route path="/compra" component={SummaryOrder} />
                 <Route path="/contacto" component={Contact} />
                 <Footer />
             </CustomProvider>

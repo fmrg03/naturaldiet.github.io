@@ -20,7 +20,9 @@ const ItemDetail = ({ producto, initial }) => {
 
     const onAdd = (cantidad) => {
         addItem(cantidad, producto)
-        setMostrar(!mostrar)
+        if (mostrar === false) {
+            setMostrar(!mostrar)
+        }
     }
 
     const sumarRestar = (stock) => {

@@ -38,11 +38,19 @@ const CustomProvider = ({ children }) => {
         setCart([])
     }
 
+    const [ordenF, setOrdenF] = useState()
+
+    const addOrden = (orden) => {
+        setOrdenF(orden)
+    }
+
     const valoresContext = {
         cart: cart,
         addItem: addItem,
         removeItem: removeItem,
-        clearCart: clearCart
+        clearCart: clearCart,
+        addOrden: addOrden,
+        ordenF: ordenF
     }
 
     return (

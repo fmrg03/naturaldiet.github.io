@@ -14,10 +14,11 @@ const Cart = () => {
         push("/productos")
     }
 
+    const irAForm = () => {
+        push("/checkout")
+    }
+
     let totalAPagar = 0
-    cart.forEach(element => {
-        totalAPagar += element.cantidad * element.producto.precio
-    })
 
     if (cart.length === 0) {
         return (
@@ -35,19 +36,21 @@ const Cart = () => {
         return (
             <Container fluid id="layoutCarrito">
                 <p className="tituloCarrito centrar">Carrito</p>
-                {cart.map(item => (
-                    <Row className="item">
-                        <Col className="centrar">
-                            <h1>{item.producto.nombre}</h1>
-                            <Image src={item.producto.imagen} className="imagenCarrito" alt={item.producto.nombre} />
-                        </Col>
-                        <Col className="totalProducto centrar">
-                            <h4><span className="boldFont">Total:</span> ${item.producto.precio * item.cantidad}</h4>
-                            <h4>Cantidad: {item.cantidad}</h4>
-                            <button className="buttonCarrito" onClick={() => removeItem(item.producto)}>Eliminar</button>
-                        </Col>
-                    </Row>
-                ))}
+                {cart.map(item => {
+                    totalAPagar += item.cantidad * item.producto.precio
+                    return (
+                        <Row className="item" key={item.producto.id}>
+                            <Col className="centrar">
+                                <h1>{item.producto.nombre}</h1>
+                                <Image src={item.producto.imagen} className="imagenCarrito" alt={item.producto.nombre} />
+                            </Col>
+                            <Col className="totalProducto centrar">
+                                <h4><span className="boldFont">Total:</span> ${item.producto.precio * item.cantidad}</h4>
+                                <h4>Cantidad: {item.cantidad}</h4>
+                                <button className="buttonCarrito" onClick={() => removeItem(item.producto)}>Eliminar</button>
+                            </Col>
+                        </Row>)
+                })}
                 <Row className="divTotalFinal">
                     <Col className="centrar totalProducto">
                         <button className="buttonVaciarCarrito" onClick={() => clearCart()}>Vaciar Carrito</button>
@@ -58,7 +61,7 @@ const Cart = () => {
                 </Row>
                 <Row className="rowButtonFinalizar">
                     <Col xxl={4}>
-                        <button className="buttonVaciarCarrito">Finalizar Compra</button>
+                        <button className="buttonVaciarCarrito" onClick={irAForm}>Iniciar Compra</button>
                     </Col>
                 </Row>
             </Container>
