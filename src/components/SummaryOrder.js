@@ -20,20 +20,20 @@ const SummaryOrder = () => {
 
     let totalAPagar = 0
 
-    const [datos, setDatos] = useState({ id: ordenF })
+    const [datos, setDatos] = useState({})
     useEffect(() => {
         const promesa = db.collection("ordenes").doc(ordenF).get()
         promesa
             .then((productos) => {
                 const datosCompletos = productos.data()
-                setDatos({ ...datos, datosCompletos })
+                setDatos({ id: ordenF, datosCompletos })
             })
             .catch((error) => {
                 console.log(error)
             })
     }, [ordenF])
 
-    if (Object.keys(datos).length === 1) {
+    if (Object.keys(datos).length === 0) {
         return (
             <div className="cargando">Cargando... <Spinner animation="border" variant="success" /></div>
         )
