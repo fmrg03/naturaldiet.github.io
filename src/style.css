@@ -18,7 +18,6 @@ header {
     margin-bottom: 50px;
     box-shadow: 0px 0px 5px 1px black;
 }
-
 header>p{
     font-size: 55px;
 }
@@ -34,11 +33,36 @@ header>p{
 .logoHeader{
     width: 250px;
 }
+@media only screen and (max-width: 320px) {
+    .logoHeader{
+        width: 200px;
+        margin-left: 50px;
+    }
+    .divCarrito{
+        margin-right: 50px;
+    }
+    .borderCol{
+        border-top: 1px solid black;
+    }
+    .borderCol2{
+        border-bottom: 1px solid black;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    .divCarrito{
+        margin-right: 80px;
+    }
+    .borderCol{
+        border-left: 1px solid black;
+    }
+    .borderCol2{
+        border-right: 1px solid black;
+    }
+}
 nav>ul{
     margin-right: 100px;
 }
-nav li a{
-    padding: 25px;
+nav a{
     color: black;
     font-size: 20px;
     text-decoration: none;
@@ -47,17 +71,24 @@ nav li a{
 ul{
     list-style-type: none;
 }
-.menu>li{
-    float:left;
+.navbar-nav{
+    justify-content: space-between;
 }
-.menu li ul{
+.menu{
+    width: 40vw;
+    margin-right: 7vw;
+}
+.menu ul{
     display: none;
     position: absolute;
 }
-.menu li:hover ul{
+.desplegable:hover ul{
     display: block;
 }
-.menu span{
+.desplegable:hover .span{
+    display: inline-block;
+}
+.menu .span{
     justify-content: center;
     font-size: 15px;
     position: relative;
@@ -66,12 +97,9 @@ ul{
 }
 .menuDesplegable{
     display: block;
-    margin: -20px 0px 0px 0px;
 }
 .menuDesplegable a{
     background-color: rgba(128, 128, 128, 0.616);
-}
-.menuDesplegable a{
     color: black;
     padding: 0 10px;
     margin: 0px 0px 0px 30px;
@@ -79,9 +107,6 @@ ul{
 }
 .menuDesplegable a:hover{
     color: blue;
-}
-.divCarrito{
-    margin-right: 80px;
 }
 .divCarrito p{
     display: inline-block;
@@ -145,12 +170,6 @@ ul{
 }
 .colBanner img{
     margin: 10px;
-}
-.borderCol{
-    border-left: 1px solid black;
-}
-.borderCol2{
-    border-right: 1px solid black;
 }
 .contenedorCards{
     width: auto;
@@ -301,6 +320,9 @@ button{
     border-radius: 30px;
     height: 100%;
 }
+.navbar-expand-lg{
+    justify-content: space-between;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -365,10 +387,14 @@ footer{
     padding: 30px 0;
     box-shadow: 0px 0px 5px 1px black;
 }
-footer nav {
-    display: flex;
-    flex-direction: column;
+footer .navbar-nav{
+    flex-direction: column!important;
+    justify-content: space-between;
     margin: 0;
+}
+footer .menu{
+    width: auto;
+    margin: auto;
 }
 footer nav>ul{
     margin: auto;
@@ -376,9 +402,6 @@ footer nav>ul{
 }
 footer .menu>li{
     float:none;
-}
-.menu :hover span{
-    display: inline-block;
 }
 footer .menuDesplegable{
     display: inline-block;
@@ -389,6 +412,22 @@ footer .menuDesplegable{
 footer nav a{
     font-size: 15px;   
     padding: 5px;
+}
+footer .menu ul{
+    display: none;
+    position: absolute;
+}
+footer .desplegable:hover ul{
+    display: block;
+}
+footer .desplegable:hover .span{
+    display: inline-block;
+}
+footer .collapse:not(.show){
+    display: inline-block;
+}
+footer nav button{
+    display: none;
 }
 footer .carrito{
     display: none;
