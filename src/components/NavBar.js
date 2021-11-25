@@ -16,7 +16,7 @@ const NavBar = () => {
                             <NavLink to="/" exact>Inicio</NavLink>
                             <NavLink to="/productos" className="desplegable">Productos <span className="span material-icons">south_east</span>
                                 <ul className="menuDesplegable">
-                                    <li><NavLink to="/categoria/frutosSecos">Frutos Secos</NavLink></li>
+                                    <li><NavLink className="aaa" to="/categoria/frutosSecos">Frutos Secos</NavLink></li>
                                     <li><NavLink to="/categoria/cereales">Cereales</NavLink></li>
                                     <li><NavLink to="/categoria/legumbres">Legumbres</NavLink></li>
                                 </ul></NavLink>

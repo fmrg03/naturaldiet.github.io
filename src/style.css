@@ -33,19 +33,42 @@ header>p{
 .logoHeader{
     width: 250px;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 320px) { 
     .logoHeader{
         width: 200px;
         margin-left: 50px;
     }
-    .divCarrito{
-        margin-right: 50px;
+
+}
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+    .logoHeader{
+        width: 200px;
+        margin-left: 75px;
     }
+}
+@media only screen and (min-width: 376px) and (max-width: 426px) {
+    .logoHeader{
+        width: 250px;
+        margin-left: 72px;
+    }
+}
+@media only screen and (max-width: 385px) {
+
+    
     .borderCol{
         border-top: 1px solid black;
     }
     .borderCol2{
         border-bottom: 1px solid black;
+    }
+}
+@media only screen and (max-width: 1023px) {
+    nav ul{
+        margin-left: 60px;
+        width: 180px;
+    }
+    .divCarrito{
+        margin-right: 50px;
     }
 }
 @media only screen and (min-width: 1400px) {
@@ -99,7 +122,7 @@ ul{
     display: block;
 }
 .menuDesplegable a{
-    background-color: rgba(128, 128, 128, 0.616);
+    background-color: rgba(39, 174, 96, 0.4);
     color: black;
     padding: 0 10px;
     margin: 0px 0px 0px 30px;
