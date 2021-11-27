@@ -11,8 +11,9 @@ const Form = () => {
     const { push } = useHistory()
 
     let totalAPagar = 0
+    let fechaCompra = new Date().toLocaleDateString()
 
-    const [datos = { pago: "Efectivo" }, setDatos] = useState()
+    const [datos, setDatos] = useState()
     const onChange = e => {
         const { name, value } = e.target;
         setDatos({
@@ -23,7 +24,7 @@ const Form = () => {
     const finalizarCompra = (e) => {
         e.preventDefault()
         if (datos.nombre && datos.telefono && datos.email !== undefined) {
-            const orden = { buyer: datos, productos: cart, totalAPagar }
+            const orden = { buyer: datos, productos: cart, totalAPagar, fecha: fechaCompra }
             const collection = db.collection("ordenes")
             const query = collection.add(orden)
             query
@@ -51,7 +52,8 @@ const Form = () => {
                         <label className="boldFont" htmlFor="telefono">Teléfono</label>
                         <input type="number" name="telefono" id="telefono" required onChange={onChange} />
                         <label className="boldFont" htmlFor="pago">Método de Pago</label>
-                        <select id="pago" name="pago" required >
+                        <select id="pago" name="pago" required onChange={onChange}>
+                            <option value=""></option>
                             <option value="Efectivo">Efectivo</option>
                             <option value="MercadoPago">MercadoPago</option>
                         </select>

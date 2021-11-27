@@ -14,12 +14,14 @@ const NavBar = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto menu">
                             <NavLink to="/" exact>Inicio</NavLink>
-                            <NavLink to="/productos" className="desplegable">Productos <span className="span material-icons">south_east</span>
+                            <div className="desplegable">
+                                <NavLink to="/productos" >Productos</NavLink>
                                 <ul className="menuDesplegable">
-                                    <li><NavLink className="aaa" to="/categoria/frutosSecos">Frutos Secos</NavLink></li>
+                                    <li><NavLink to="/categoria/frutosSecos">Frutos Secos</NavLink></li>
                                     <li><NavLink to="/categoria/cereales">Cereales</NavLink></li>
                                     <li><NavLink to="/categoria/legumbres">Legumbres</NavLink></li>
-                                </ul></NavLink>
+                                </ul>
+                            </div>
                             <NavLink to="/promo">Promociones</NavLink>
                             <NavLink to="/contacto">Contacto</NavLink>
                         </Nav>

@@ -7,7 +7,6 @@ import Image from 'react-bootstrap/Image'
 import { useHistory } from "react-router-dom"
 import { db } from "../firebase/firebase"
 
-
 const SummaryOrder = () => {
 
     const { ordenF } = useContext(context)
@@ -17,8 +16,6 @@ const SummaryOrder = () => {
     const irAInicio = () => {
         push("/")
     }
-
-    let totalAPagar = 0
 
     const [datos, setDatos] = useState({})
     useEffect(() => {
@@ -40,7 +37,14 @@ const SummaryOrder = () => {
     } else {
         return (
             <Container fluid id="layoutResumen">
-                <p id="idCompra"><span className="boldFont">Compra #</span>{datos.id}</p>
+                <Row>
+                    <Col xxl={6}>
+                        <p id="idFecha"><span className="boldFont">Fecha: </span>{datos.datosCompletos.fecha}</p>
+                    </Col>
+                    <Col xxl={6}>
+                        <p id="idCompra"><span className="boldFont">Compra #</span>{datos.id}</p>
+                    </Col>
+                </Row>
                 <h1 className="centrar boldFont">Resumen de Compra</h1>
                 <Row className="item">
                     <Col xxl={5}>
@@ -53,7 +57,6 @@ const SummaryOrder = () => {
                     <Col xxl={7} className="borderLeft">
                         <h3 className="centrar marginBottom">Productos</h3>
                         {datos.datosCompletos.productos.map(item => {
-                            totalAPagar += item.cantidad * item.producto.precio
                             return (
                                 <Row key={item.producto.id}>
                                     <Col className="centrar paddingLeft">
@@ -72,7 +75,7 @@ const SummaryOrder = () => {
                 </Row>
                 <Row className="divTotalFinal">
                     <Col className="derecha">
-                        <h4 className="totalResumen">Total: <span className="boldFont">${totalAPagar}</span></h4>
+                        <h4 className="totalResumen">Total: <span className="boldFont">${datos.datosCompletos.totalAPagar}</span></h4>
                     </Col>
                 </Row>
                 <Row className="centrar">
