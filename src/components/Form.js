@@ -13,7 +13,7 @@ const Form = () => {
     let totalAPagar = 0
     let fechaCompra = new Date().toLocaleDateString()
 
-    const [datos, setDatos] = useState()
+    const [datos, setDatos] = useState({})
     const onChange = e => {
         const { name, value } = e.target;
         setDatos({
@@ -22,8 +22,8 @@ const Form = () => {
         });
     }
     const finalizarCompra = (e) => {
-        e.preventDefault()
-        if (datos.nombre && datos.telefono && datos.email !== undefined) {
+        if (Object.keys(datos).length === 4) {
+            e.preventDefault()
             const orden = { buyer: datos, productos: cart, totalAPagar, fecha: fechaCompra }
             const collection = db.collection("ordenes")
             const query = collection.add(orden)

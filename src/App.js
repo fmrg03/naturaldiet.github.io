@@ -8,6 +8,7 @@ import { BrowserRouter, Route } from "react-router-dom"
 import CustomProvider from "./context/CartContext"
 import Form from "./components/Form"
 import SummaryOrder from "./components/SummaryOrder"
+import Promotions from "./components/Promotions"
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path="/cart" component={Cart} />
                 <Route path="/checkout" component={Form} />
                 <Route path="/compra" component={SummaryOrder} />
+                <Route path="/promo" component={Promotions} />
                 <Route path="/contacto" component={Contact} />
                 <Footer />
             </CustomProvider>

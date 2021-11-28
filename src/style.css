@@ -62,7 +62,8 @@ header>p{
 }
 @media only screen and (max-width: 1023px) {
     nav ul{
-        margin-left: 60px;
+        margin-top: -25px;
+        margin-left: 55px;
         width: 180px;
     }
     .divCarrito{
@@ -112,13 +113,15 @@ ul{
 .menuDesplegable a{
     background-color: rgba(39, 174, 96, 0.4);
     color: black;
-    font-weight: bold;
     padding: 0 10px;
     margin: 0px 0px 0px 30px;
     font-size: 16px;
 }
 .menuDesplegable a:hover{
     color: blue;
+}
+.active{
+    font-weight: bold;
 }
 .divCarrito p{
     display: inline-block;
@@ -528,4 +531,15 @@ footer .flexFooter {
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 8px;
+}
+.filaPromos{
+    background-color: rgba(39, 174, 96, 0.1);
+    margin: 20px;
+    border-radius: 30px;
+}
+.filaPromos h1{
+    margin: 30px auto;
+    padding-bottom: 20px;
+    width: 95%;
+    border-bottom: 1px solid black;
 }
