@@ -14,7 +14,7 @@ const Form = () => {
     let fechaCompra = new Date().toLocaleDateString()
 
     const [datos, setDatos] = useState({})
-    const onChange = e => {
+    const obtenerDatos = e => {
         const { name, value } = e.target;
         setDatos({
             ...datos,
@@ -46,13 +46,13 @@ const Form = () => {
                     <form>
                         <h4 className="centrar boldFont">Datos de Contacto</h4>
                         <label className="boldFont" htmlFor="nombre">Nombre y Apellido</label>
-                        <input type="text" name="nombre" id="nombre" required onChange={onChange} />
+                        <input type="text" name="nombre" id="nombre" required onChange={obtenerDatos} />
                         <label className="boldFont" htmlFor="email">Email</label>
-                        <input type="email" name="email" id="email" required onChange={onChange} />
+                        <input type="email" name="email" id="email" required onChange={obtenerDatos} />
                         <label className="boldFont" htmlFor="telefono">Teléfono</label>
-                        <input type="number" name="telefono" id="telefono" required onChange={onChange} />
+                        <input type="number" name="telefono" id="telefono" required onChange={obtenerDatos} />
                         <label className="boldFont" htmlFor="pago">Método de Pago</label>
-                        <select id="pago" name="pago" required onChange={onChange}>
+                        <select id="pago" name="pago" required onChange={obtenerDatos}>
                             <option value=""></option>
                             <option value="Efectivo">Efectivo</option>
                             <option value="MercadoPago">MercadoPago</option>

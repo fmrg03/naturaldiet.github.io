@@ -10,20 +10,18 @@ const ItemListContainer = () => {
     let nombreCategoria = "Productos"
     let { id } = useParams()
 
-    if (id !== undefined) {
-        switch (id) {
-            case "frutosSecos":
-                nombreCategoria = "Frutos Secos"
-                break
-            case "cereales":
-                nombreCategoria = "Cereales"
-                break
-            case "legumbres":
-                nombreCategoria = "Legumbres"
-                break
-            default:
-                break
-        }
+    switch (id) {
+        case "frutosSecos":
+            nombreCategoria = "Frutos Secos"
+            break
+        case "cereales":
+            nombreCategoria = "Cereales"
+            break
+        case "legumbres":
+            nombreCategoria = "Legumbres"
+            break
+        default:
+            break
     }
 
     const [datos, setDatos] = useState([])
@@ -55,7 +53,7 @@ const ItemListContainer = () => {
             <Row>
                 <Col xs={12} xxl={12}>
                     <div className="flexProductos">
-                        <ItemList productos={datos} initial={1} />
+                        <ItemList productos={datos} />
                     </div>
                 </Col>
             </Row>

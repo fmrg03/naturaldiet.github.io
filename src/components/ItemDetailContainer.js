@@ -27,7 +27,9 @@ const ItemDetailContainer = () => {
     }, [id])
 
     const ruta = "/categoria/" + datos.categoria
+
     let nombreCategoria = "Productos"
+    
     switch (datos.categoria) {
         case "frutosSecos":
             nombreCategoria = "Frutos Secos"
@@ -41,7 +43,7 @@ const ItemDetailContainer = () => {
         default:
             break
     }
-    
+
     if (datos.length === 0) {
         return (
             <>
@@ -67,7 +69,7 @@ const ItemDetailContainer = () => {
                 </Row>
                 <Row>
                     <Col>
-                        <ItemDetail id={datos.id} producto={datos} initial={1} />
+                        <ItemDetail producto={datos} initial={1} />
                     </Col>
                 </Row>
                 <Row className="filaBanner">

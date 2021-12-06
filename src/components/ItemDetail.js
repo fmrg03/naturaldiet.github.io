@@ -44,7 +44,7 @@ const ItemDetail = ({ producto, initial }) => {
                     <p><span className="boldFont">Precio: </span>${producto.precio}</p>
                     <ItemCount initial={initial} producto={producto} onAdd={onAdd} sumarRestar={sumarRestar} />
                     <p><span className="boldFont">Stock: </span>{stockfinal}</p>
-                    {mostrar && <button className="buttonCarrito" onClick={redireccionar}>Finalizar Compra</button>}
+                    {mostrar && <button className="buttonCarrito" onClick={redireccionar}>Ir al Carrito</button>}
                     <div>
                         <h4 className="boldFont">Detalles del Producto</h4>
                         {producto.descripcion}
