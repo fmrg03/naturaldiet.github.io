@@ -1,4 +1,4 @@
-# Proyecto Final ReactJS - CoderHouse
+# Proyecto Final React Js - CoderHouse
 
 **Autor:** Froilán Ramos
 
@@ -12,7 +12,7 @@ Antes de usar FireBase como base de datos, se usó una base de datos local con e
 
 # Uso e Instalación
 
-### Uso de la Web
+## Uso de la Web
 
 El ecommerce fue realizado de forma sencilla e intuitiva con el fin de que el cliente pueda realizar una navegación de forma rápida y sencilla a travéz de las distitas secciones que se encuentran en la página.
 
@@ -28,7 +28,11 @@ Existen 3 Categorias de productos, **Frutos Secos**, **Cereales** y **Legumbres*
 
 Por otra parte, estan dos secciones más agregadas a la web, *Promociones* y *Contacto*, en las cuales se muentran unas promociones de compra de productos y un formulario de contacto realizado con [Formspree](https://formspree.io), respectivamente.
 
-### Instalación
+#### Explicación mediante video como realizar una compra
+
+https://www.youtube.com/watch?v=SsKp4HwOV94
+
+## Instalación
 
 Para poder inicializar el proyecto, se debe clonar el repositorio, para ello primero iniciamos git con el comando ***git init*** en la consola, parados sobre la capeta donde queramos clonar, luego, usando el siguiente comando ***git clone https://github.com/fmrg03/reactjs***, se clonará el repositorio en la carpeta donde se encuentra parado en la consola.
 
@@ -38,7 +42,7 @@ Luego que la instalación de los paquetes culmine, se debe ejecutar el siguiente
 
 Sin embargo, como para este proyecto se utilizaron **Variables de Entorno**, y al repositorio no se cargó el archivo ***.env*** que contiene las credenciales de FireBase guardadas en las Variables de Entorno, la base de datos en FireBase no será accesible y no se mostrarán los productos.
 
-Si deseas obtener las credenciales de FireBase, puedes escribirme un email a mi dirección froilanmartinr@gmail.com, explicandome porque necesito acceder a la base de datos en FireBase, y así obtenerlas.
+Si deseas obtener las credenciales de Firebase, puedes escribirme un email a mi dirección froilanmartinr@gmail.com, explicandome porque necesitas las credenciales, y así obtenerlas.
 
 # Librerias / Herramientas
 
