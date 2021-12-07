@@ -16,7 +16,7 @@ Antes de usar FireBase como base de datos, se usó una base de datos local con e
 
 ## Uso de la Web
 
-El ecommerce fue realizado de forma sencilla e intuitiva con el fin de que el cliente pueda realizar una navegación de forma rápida y sencilla a travéz de las distitas secciones que se encuentran en la página.
+El ecommerce fue realizado de forma sencilla e intuitiva con el fin de que el cliente pueda realizar una navegación de forma rápida y sencilla a través de las distitas secciones que se encuentran en la página.
 
 Al elegir un producto para visualizarlo, el cliente podrá ver la información del mismo, seleccionar la cantidad de unidades que desea, además de poder agregarlo al carrito de compras, y si por error olvidó agregar más unidades, sin problema puede realizarlo allí mismo o volviendo al detalle del producto y seleccionando la cantidad extra que desea.
 
